@@ -1,0 +1,242 @@
+/* BraiBridge - modern.css
+   Load AFTER bootstrap + welcome.css so these rules override them. */
+ 
+:root {
+  --bb-bg: #f3f5f9;
+  --bb-surface: #ffffff;
+  --bb-ink: #14213d;
+  --bb-muted: #5b6478;
+  --bb-line: #e3e7ef;
+  --bb-accent: #1de9b6;
+  --bb-accent-dark: #0b8f72;
+  --bb-right: #12805c;
+  --bb-wrong: #c2352b;
+  --bb-warn: #b7791f;
+  --bb-radius: 14px;
+}
+ 
+body {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bb-bg);
+  color: var(--bb-ink);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+ 
+/* ---------- Navbar ---------- */
+body .navbar-default {
+  background: var(--bb-surface);
+  border: 0;
+  border-bottom: 1px solid var(--bb-line);
+  border-radius: 0;
+  margin-bottom: 0;
+  box-shadow: 0 1px 0 rgba(20, 33, 61, .03);
+}
+body .navbar-default .navbar-brand {
+  color: var(--bb-ink);
+  font-weight: 800;
+  letter-spacing: -.01em;
+  font-size: 20px;
+}
+body .navbar-default .navbar-nav > li > a {
+  color: var(--bb-muted);
+  font-weight: 600;
+  border-radius: 999px;
+  margin: 9px 3px;
+  padding: 8px 16px;
+  transition: background .15s, color .15s;
+}
+body .navbar-default .navbar-nav > li > a:hover,
+body .navbar-default .navbar-nav > li > a:focus {
+  background: var(--bb-bg);
+  color: var(--bb-ink);
+}
+body .navbar-default .navbar-nav > .active > a,
+body .navbar-default .navbar-nav > .active > a:hover,
+body .navbar-default .navbar-nav > .active > a:focus {
+  background: var(--bb-ink);
+  color: #fff;
+}
+body .navbar-default .navbar-toggle { border-color: var(--bb-line); }
+body .navbar-default .navbar-toggle .icon-bar { background: var(--bb-ink); }
+ 
+/* ---------- Cards / panels ---------- */
+body .panel {
+  background: var(--bb-surface);
+  border: 1px solid var(--bb-line);
+  border-radius: var(--bb-radius);
+  box-shadow: 0 1px 2px rgba(20, 33, 61, .04), 0 8px 24px rgba(20, 33, 61, .05);
+  padding: 28px;
+  margin: 0 auto 24px;
+  overflow: hidden;
+}
+body .panel h2 {
+  color: var(--bb-ink);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  margin-top: 0;
+}
+body .panel hr { border-top: 1px solid var(--bb-line); }
+ 
+/* ---------- Tables ---------- */
+body .table { margin-bottom: 0; background: transparent; }
+body .table > tbody > tr > td {
+  padding: 14px 12px;
+  vertical-align: middle;
+  border-top: 1px solid var(--bb-line);
+  color: var(--bb-ink);
+}
+body .table > tbody > tr:first-child > td {
+  border-top: 0;
+  color: var(--bb-muted);
+  font-size: 13px;
+  font-weight: 700;
+  background: var(--bb-bg);
+}
+body .table-striped > tbody > tr:nth-of-type(odd) { background: transparent; }
+body .table > tbody > tr:not(:first-child):hover { background: #f8faff; }
+ 
+/* completed quiz row on Home */
+body .table > tbody > tr.done-row > td { color: var(--bb-right); font-weight: 600; }
+ 
+/* ---------- Buttons ---------- */
+body .btn {
+  border-radius: 10px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border: 1px solid transparent;
+  transition: transform .12s, box-shadow .12s, background .12s;
+}
+body .btn:active { transform: translateY(1px); }
+body .btn:focus-visible { outline: 3px solid rgba(29, 233, 182, .5); outline-offset: 2px; }
+ 
+body .btn-start {
+  background: var(--bb-accent);
+  color: var(--bb-ink);
+  margin: 0;
+}
+body .btn-start:hover { background: #17cfa2; color: var(--bb-ink); }
+ 
+body .btn-restart {
+  background: transparent;
+  color: var(--bb-warn);
+  border-color: #e8c98a;
+  margin: 0;
+}
+body .btn-restart:hover { background: #fdf6e7; color: var(--bb-warn); }
+ 
+body .btn-primary {
+  background: var(--bb-ink);
+  border-color: var(--bb-ink);
+  color: #fff;
+  padding: 10px 24px;
+}
+body .btn-primary:hover,
+body .btn-primary:focus { background: #1d3160; border-color: #1d3160; }
+ 
+/* ---------- Quiz question ---------- */
+body .quiz-card { max-width: 760px; }
+.question-no {
+  color: var(--bb-accent-dark);
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.question-text {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -.01em;
+  margin-bottom: 22px;
+}
+ 
+label.option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin: 0 0 10px;
+  padding: 14px 16px;
+  border: 1.5px solid var(--bb-line);
+  border-radius: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color .12s, background .12s;
+}
+label.option:hover { border-color: #b9c2d6; background: #fafbfe; }
+label.option input[type="radio"] {
+  margin: 0;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--bb-ink);
+  flex-shrink: 0;
+}
+label.option:has(input:checked) {
+  border-color: var(--bb-ink);
+  background: #eef1fa;
+}
+label.option:has(input:focus-visible) { outline: 3px solid rgba(29, 233, 182, .5); }
+ 
+/* ---------- Result ---------- */
+body .panel .result-title {
+  text-align: center;
+  margin-bottom: 18px;
+}
+body .result-table { max-width: 520px; margin: 0 auto; font-size: 17px; font-weight: 600; }
+body .result-table > tbody > tr:first-child > td {
+  /* the first result row is data, not a header */
+  background: transparent;
+  color: var(--bb-ink);
+  font-size: inherit;
+}
+body .result-table > tbody > tr > td:last-child { text-align: right; font-weight: 800; }
+body .result-table tr.r-total > td { color: var(--bb-ink); }
+body .result-table tr.r-right > td { color: var(--bb-right); }
+body .result-table tr.r-wrong > td { color: var(--bb-wrong); }
+body .result-table tr.r-score > td { color: var(--bb-ink); }
+body .result-table tr.r-overall > td { color: var(--bb-accent-dark); }
+ 
+/* ---------- Study materials ---------- */
+body .list-group { margin-bottom: 0; }
+body .list-group-item {
+  border: 1.5px solid var(--bb-line);
+  border-radius: 12px !important;
+  margin-bottom: 10px;
+  padding: 16px 18px;
+  transition: border-color .12s, background .12s;
+}
+body a.list-group-item:hover { background: #fafbfe; border-color: #b9c2d6; }
+body .list-group-item-heading { color: var(--bb-ink); font-weight: 700; }
+body .list-group-item-text { color: var(--bb-muted); }
+ 
+/* ---------- Feedback form ---------- */
+body .panel form { max-width: 640px; margin: 0 auto; }
+body .form-control {
+  border: 1.5px solid var(--bb-line);
+  border-radius: 10px;
+  box-shadow: none;
+  padding: 10px 14px;
+  height: auto;
+}
+body .form-control:focus { border-color: var(--bb-ink); box-shadow: 0 0 0 3px rgba(20, 33, 61, .08); }
+body .form-control[readonly] { background: var(--bb-bg); color: var(--bb-muted); }
+body .form-group label { font-weight: 700; color: var(--bb-ink); }
+body .alert-success {
+  border-radius: 12px;
+  border: 1px solid #b7e4d3;
+  background: #e8f7f0;
+  color: var(--bb-right);
+  font-weight: 600;
+}
+ 
+/* ---------- Small screens ---------- */
+@media (max-width: 767px) {
+  body .panel { padding: 18px; border-radius: 12px; }
+  .question-text { font-size: 19px; }
+  body .navbar-default .navbar-nav > li > a { margin: 2px 0; }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+ 

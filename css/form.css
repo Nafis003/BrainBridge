@@ -1,0 +1,178 @@
+/* BraiBridge - form.css (Updated width to match login card size) */
+:root {
+  --bb-bg: #f3f5f9;
+  --bb-surface: #ffffff;
+  --bb-ink: #14213d;
+  --bb-muted: #5b6478;
+  --bb-line: #e3e7ef;
+ --bb-accent: #008000;
+  --bb-accent-dark: #008000;
+  --bb-right: #008000;
+  --bb-wrong: #bd0e02;
+  --bb-warn: #b7791f;
+  --bb-radius: 14px;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-weight: 300;
+  color: var(--bb-ink);
+  background: var(--bb-bg);
+  font-size: 1.4em;
+  line-height: 1.55;
+}
+
+h1, h2, h3, h4, h6,
+.line div {
+  font-weight: 800;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  color: var(--bb-ink);
+  margin: 10px 0;
+  letter-spacing: -.02em;
+}
+
+h4 {
+  font-size: 26px;
+}
+
+.input-group .btn {
+  height: 40px;
+}
+
+a, .btn {
+  transition: transform .12s, box-shadow .12s, background .12s, color .12s;
+}
+
+a {
+  color: var(--bb-accent-dark);
+}
+a:hover, a:focus {
+  color: var(--bb-ink);
+  text-decoration: none;
+}
+
+section {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+section.first {
+  padding-top: 120px;
+}
+
+.form-control {
+  border: 1.5px solid var(--bb-line);
+  border-radius: 10px;
+  height: auto;
+  padding: 10px 14px;
+  box-shadow: none;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  color: var(--bb-ink);
+}
+.form-control:focus {
+  border-color: var(--bb-ink);
+  box-shadow: 0 0 0 3px rgba(20, 33, 61, .08);
+}
+
+.btn {
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  border-color: transparent;
+  letter-spacing: .5px;
+  font-weight: 700;
+}
+.btn.btn-lg {
+  padding: 15px 40px;
+}
+.btn.btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+.btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+.btn.btn-rounded {
+  border-radius: 999px;
+}
+.btn i {
+  margin-right: 5px;
+}
+
+.btn-primary {
+  background-color: var(--bb-wrong); /* Ager image er moto red ba primary color */
+  border-color: var(--bb-wrong);
+  color: #fff;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #a82b22;
+  border-color: #a82b22;
+}
+
+.btn-success {
+  background-color: var(--bb-right);
+  color: #fff !important;
+  border-color: var(--bb-right);
+}
+
+.btn-warning {
+  background-color: var(--bb-warn);
+  color: #fff !important;
+  border-color: var(--bb-warn);
+}
+
+.btn-danger {
+  background-color: var(--bb-wrong);
+  color: #fff !important;
+  border-color: var(--bb-wrong);
+}
+
+.btn-info {
+  background-color: #3498db;
+  color: #fff !important;
+  border-color: #3498db;
+}
+
+.btn-default {
+  background-color: var(--bb-line);
+  color: var(--bb-ink) !important;
+  border-color: var(--bb-line);
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--bb-ink);
+}
+.form-group label .required {
+  color: var(--bb-wrong);
+  font-weight: 600;
+}
+.form-group .help-block {
+  font-size: 12px;
+  color: var(--bb-muted);
+}
+
+/* Login box-er width 400px kore 2nd image er sathe map kora holo */
+.box-wrapper {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.box {
+  background-color: var(--bb-surface);
+  border-radius: var(--bb-radius);
+  border: 1px solid var(--bb-line);
+  box-shadow: 0 1px 2px rgba(20, 33, 61, .04), 0 8px 24px rgba(20, 33, 61, .05);
+}
+.box .box-body {
+  padding: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .box-wrapper {
+    width: 100%;
+  }
+}
